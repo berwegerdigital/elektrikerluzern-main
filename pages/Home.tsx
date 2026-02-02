@@ -89,44 +89,50 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Benefits Section - Restored */}
-      <section className="bg-white py-24 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-6">Ihre Vorteile</h2>
-            <p className="text-slate-600 text-lg">
-              Sparen Sie Zeit und Geld bei der Suche nach dem passenden Elektro-Fachmann.
-            </p>
+      {/* Benefits Section - Professional Redesign */}
+      <section className="bg-white py-24 relative overflow-hidden">
+        {/* Subtle background element */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(0,94,184,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[#0f172a] mb-6 tracking-tight">
+              Ihre Vorteile auf einen Blick
+            </h2>
+            <div className="w-20 h-1.5 bg-[#ff6600] mx-auto mb-8 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-50 p-10 rounded-xl shadow-sm hover:shadow-md transition border border-slate-100 group">
-              <div className="w-16 h-16 bg-white text-[#005eb8] rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-6 group-hover:bg-[#005eb8] group-hover:text-white transition duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Card 1 */}
+            <div className="bg-white p-10 rounded-2xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-[#005eb8] text-white rounded-2xl shadow-[0_10px_20px_-5px_rgba(0,94,184,0.3)] flex items-center justify-center mb-8 group-hover:scale-110 transition duration-300">
                 <ClipboardList size={32} />
               </div>
-              <h3 className="text-xl font-bold text-[#0f172a] mb-4 text-center">Schnell & Einfach</h3>
-              <p className="text-slate-600 leading-relaxed text-center">
-                Ersparen Sie sich das Herumtelefonieren. Beschreiben Sie Ihr Anliegen einmal und erreichen Sie verfügbare Profis.
+              <h3 className="text-2xl font-bold text-[#0f172a] mb-5">Schnell & Einfach</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Ersparen Sie sich das mühsame Herumtelefonieren. Beschreiben Sie Ihr Anliegen einmal und wir finden die verfügbaren Profis für Sie.
               </p>
             </div>
 
-            <div className="bg-slate-50 p-10 rounded-xl shadow-sm hover:shadow-md transition border border-slate-100 group">
-              <div className="w-16 h-16 bg-white text-[#005eb8] rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-6 group-hover:bg-[#005eb8] group-hover:text-white transition duration-300">
+            {/* Card 2 */}
+            <div className="bg-white p-10 rounded-2xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-[#005eb8] text-white rounded-2xl shadow-[0_10px_20px_-5px_rgba(0,94,184,0.3)] flex items-center justify-center mb-8 group-hover:scale-110 transition duration-300">
                 <Search size={32} />
               </div>
-              <h3 className="text-xl font-bold text-[#0f172a] mb-4 text-center">Regionale Anbieter</h3>
-              <p className="text-slate-600 leading-relaxed text-center">
-                Wir leiten Ihre Anfrage gezielt an Elektriker im Kanton Luzern weiter (z.B. Stadt Luzern, Sursee, Emmen, Kriens).
+              <h3 className="text-2xl font-bold text-[#0f172a] mb-5">Regionale Anbieter</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Profitieren Sie von kurzen Anfahrtswegen. Wir vermitteln gezielt an etablierte Elektriker direkt aus dem Kanton Luzern und Umgebung.
               </p>
             </div>
 
-            <div className="bg-slate-50 p-10 rounded-xl shadow-sm hover:shadow-md transition border border-slate-100 group">
-              <div className="w-16 h-16 bg-white text-[#005eb8] rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-6 group-hover:bg-[#005eb8] group-hover:text-white transition duration-300">
+            {/* Card 3 */}
+            <div className="bg-white p-10 rounded-2xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-[#005eb8] text-white rounded-2xl shadow-[0_10px_20px_-5px_rgba(0,94,184,0.3)] flex items-center justify-center mb-8 group-hover:scale-110 transition duration-300">
                 <CheckCircle size={32} />
               </div>
-              <h3 className="text-xl font-bold text-[#0f172a] mb-4 text-center">Kostenlos & unverbindlich</h3>
-              <p className="text-slate-600 leading-relaxed text-center">
-                Ihre Anfrage ist für Sie völlig kostenlos und ohne Verpflichtung. Sie entscheiden, wen Sie beauftragen.
+              <h3 className="text-2xl font-bold text-[#0f172a] mb-5">Kostenlos & Fair</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Unser Service ist für Sie zu 100% kostenlos und unverbindlich. Sie erhalten faire Angebote und entscheiden ganz ohne Druck.
               </p>
             </div>
           </div>

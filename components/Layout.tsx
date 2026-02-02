@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, Search, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { SERVICES, REGIONS } from '../services/data';
 
 interface LayoutProps {
@@ -12,10 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    navigate('/alle-elektriker');
-  };
+
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -28,25 +25,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="flex justify-between items-center gap-8">
             {/* Logo - UPDATED */}
             <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-              <img src="/logo.png" alt="Elektriker Luzern" className="h-12 w-auto object-contain" />
+
               <span className="font-bold text-2xl tracking-tight font-display">
                 <span className="text-[#0f172a]">Elektriker</span><span className="text-[#005eb8]">Luzern</span>
               </span>
             </Link>
 
-            {/* Desktop Search Bar */}
-            <div className="hidden lg:block flex-grow max-w-xl">
-              <form onSubmit={handleSearch} className="relative group">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Search size={18} className="text-slate-400 group-focus-within:text-[var(--primary)] transition" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Suchen..."
-                  className="block w-full pl-11 pr-4 py-3 bg-slate-100 border-2 border-transparent rounded-full text-sm placeholder-slate-500 focus:outline-none focus:bg-white focus:border-[var(--primary)] transition shadow-inner"
-                />
-              </form>
-            </div>
+
 
             {/* Desktop Nav Actions */}
             <div className="hidden md:flex items-center space-x-4">
@@ -107,13 +92,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {/* Mobile Nav */}
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-slate-100 py-4 px-4 space-y-4 shadow-xl absolute w-full z-40 top-full max-h-[85vh] overflow-y-auto">
-            <form onSubmit={handleSearch} className="relative mb-6">
-              <input
-                type="text"
-                placeholder="Suche..."
-                className="block w-full px-4 py-3 bg-slate-50 rounded-lg text-sm border border-slate-200"
-              />
-            </form>
+
             <Link to="/" className="block text-slate-800 font-bold text-lg py-2 border-b border-slate-50" onClick={() => setIsMenuOpen(false)}>Startseite</Link>
 
             <div className="space-y-3 pt-2">

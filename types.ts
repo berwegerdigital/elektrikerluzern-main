@@ -2,8 +2,6 @@ export interface Company {
   id: string;
   name: string;
   email?: string;
-  phone?: string;
-  website?: string;
   address?: string;
   zip?: string;
   city?: string;

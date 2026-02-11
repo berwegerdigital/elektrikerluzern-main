@@ -6,7 +6,6 @@ import Layout from './components/Layout';
 const Home = React.lazy(() => import('./pages/Home'));
 const ServicePage = React.lazy(() => import('./pages/ServicePage'));
 const RegionPage = React.lazy(() => import('./pages/RegionPage'));
-const CompanyPage = React.lazy(() => import('./pages/CompanyPage'));
 const AllCompanies = React.lazy(() => import('./pages/AllCompanies'));
 const Partner = React.lazy(() => import('./pages/Partner'));
 const Impressum = React.lazy(() => import('./pages/Impressum'));
@@ -38,13 +37,13 @@ const App: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/service/:slug" element={<ServicePage />} />
               <Route path="/region/:slug" element={<RegionPage />} />
-              <Route path="/company/:slug" element={<CompanyPage />} />
               <Route path="/alle-elektriker" element={<AllCompanies />} />
               <Route path="/partner" element={<Partner />} />
               <Route path="/impressum" element={<Impressum />} />
               {/* Redirect old emergency route to home */}
               <Route path="/notfall" element={<Navigate to="/" replace />} />
               <Route path="/kontakt" element={<Navigate to="/partner" replace />} />
+              <Route path="/company/*" element={<Navigate to="/partner" replace />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </React.Suspense>

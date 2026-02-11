@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { Check, ArrowRight, Zap, ShieldCheck, Wifi, Sun, Lightbulb, PlugZap } from 'lucide-react';
+import { Check, Zap, ShieldCheck, Wifi, Sun, Lightbulb, PlugZap } from 'lucide-react';
 import SEO from '../components/SEO';
-import LeadModal from '../components/LeadModal';
 import { SERVICES } from '../services/data';
 
 const ServicePage: React.FC = () => {
@@ -12,8 +11,6 @@ const ServicePage: React.FC = () => {
   if (!service) {
     return <Navigate to="/" replace />;
   }
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const IconMap: Record<string, any> = {
     PlugZap, ShieldCheck, Wifi, Sun, Lightbulb, Zap
@@ -25,13 +22,6 @@ const ServicePage: React.FC = () => {
       <SEO
         title={service.metaTitle}
         description={service.metaDesc}
-      />
-
-      <LeadModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        companyName="unsere Partnerbetriebe"
-        location="Luzern & Umgebung"
       />
 
       {/* Page Header */}
@@ -95,12 +85,12 @@ const ServicePage: React.FC = () => {
               <p className="text-gray-600 text-sm mb-8 leading-relaxed">
                 Finden Sie jetzt den passenden Partner für Ihr Anliegen in der Zentralschweiz.
               </p>
-              <button
-                onClick={() => setIsModalOpen(true)}
+              <Link
+                to="/kontakt"
                 className="block w-full text-center bg-[#ff6600] text-white font-bold py-4 rounded-sm hover:bg-[#e65c00] transition shadow-md mb-4"
               >
                 Offerte erhalten
-              </button>
+              </Link>
               <p className="text-xs text-gray-400 text-center">
                 Über 100 Betriebe gelistet
               </p>

@@ -60,7 +60,7 @@ const RegionPage: React.FC = () => {
                                 </div>
                             </div>
                             <Link
-                                to="/partner"
+                                to="/kontakt"
                                 className="btn-contact"
                             >
                                 Offerte anfragen
@@ -77,8 +77,8 @@ const RegionPage: React.FC = () => {
                         <p className="text-slate-300 mb-10 max-w-2xl mx-auto text-lg">
                             Unser Netzwerk verbindet Sie mit den führenden Elektro-Unternehmen der Zentralschweiz. Gerne leiten wir Ihre Anfrage weiter.
                         </p>
-                        <Link to="/partner" className="inline-block bg-[#ff6600] text-white font-bold py-4 px-12 rounded-lg hover:bg-[#e65c00] transition shadow-lg">
-                            Kontakt aufnehmen
+                        <Link to="/kontakt" className="inline-block bg-[#ff6600] text-white font-bold py-4 px-12 rounded-lg hover:bg-[#e65c00] transition shadow-lg">
+                            Offerte anfragen
                         </Link>
                     </div>
                 </div>

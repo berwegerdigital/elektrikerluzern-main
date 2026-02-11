@@ -36,6 +36,7 @@ const STATIC_ROUTES = [
   '/',
   '/alle-elektriker',
   '/partner',
+  '/kontakt',
   '/impressum'
 ];
 

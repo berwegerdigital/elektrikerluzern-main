@@ -8,6 +8,7 @@ const ServicePage = React.lazy(() => import('./pages/ServicePage'));
 const RegionPage = React.lazy(() => import('./pages/RegionPage'));
 const AllCompanies = React.lazy(() => import('./pages/AllCompanies'));
 const Partner = React.lazy(() => import('./pages/Partner'));
+const AnfragePage = React.lazy(() => import('./pages/AnfragePage'));
 const Impressum = React.lazy(() => import('./pages/Impressum'));
 
 // Add scroll to top behavior on route change
@@ -40,10 +41,10 @@ const App: React.FC = () => {
               <Route path="/alle-elektriker" element={<AllCompanies />} />
               <Route path="/partner" element={<Partner />} />
               <Route path="/impressum" element={<Impressum />} />
+              <Route path="/kontakt" element={<AnfragePage />} />
               {/* Redirect old emergency route to home */}
               <Route path="/notfall" element={<Navigate to="/" replace />} />
-              <Route path="/kontakt" element={<Navigate to="/partner" replace />} />
-              <Route path="/company/*" element={<Navigate to="/partner" replace />} />
+              <Route path="/company/*" element={<Navigate to="/kontakt" replace />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </React.Suspense>

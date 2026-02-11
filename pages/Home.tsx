@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, ArrowRight, Search, ClipboardList } from 'lucide-react';
+import { CheckCircle, Search, ClipboardList } from 'lucide-react';
 import SEO from '../components/SEO';
-import LeadModal from '../components/LeadModal';
 
 const Home: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <>
       <SEO
@@ -20,13 +17,6 @@ const Home: React.FC = () => {
           "url": "https://elektrikerluzern.ch",
           "sameAs": []
         }}
-      />
-
-      <LeadModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        companyName="unsere Partnerbetriebe"
-        location="Luzern & Umgebung"
       />
 
       {/* Hero Section with Background Image */}
@@ -53,13 +43,13 @@ const Home: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => setIsModalOpen(true)}
+                <Link
+                  to="/kontakt"
                   className="bg-[#ff6600] text-white text-lg font-bold py-4 px-8 rounded-lg hover:bg-[#e65c00] transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
                 >
                   <ClipboardList size={22} />
                   Offerte anfordern
-                </button>
+                </Link>
                 <Link
                   to="/alle-elektriker"
                   className="bg-white text-[#0f172a] border border-slate-200 text-lg font-bold py-4 px-8 rounded-lg hover:bg-slate-50 hover:border-slate-300 transition flex items-center justify-center gap-2 shadow-sm"
@@ -149,12 +139,12 @@ const Home: React.FC = () => {
               Suchen Sie einen zuverlässigen Fachbetrieb in Ihrer Region? Unser Verzeichnis umfasst über 100 zertifizierte Elektriker in der Zentralschweiz. Egal ob Wallbox-Installation, Lampenmontage oder Neubau.
             </p>
           </div>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-white text-[#005eb8] font-bold text-lg py-4 px-10 rounded-lg hover:bg-gray-100 transition whitespace-nowrap shadow-xl transform hover:-translate-y-1"
+          <Link
+            to="/kontakt"
+            className="bg-white text-[#005eb8] font-bold text-lg py-4 px-10 rounded-lg hover:bg-gray-100 transition whitespace-nowrap shadow-xl transform hover:-translate-y-1 block text-center"
           >
             Kostenlose Offerte
-          </button>
+          </Link>
         </div>
       </section>
     </>

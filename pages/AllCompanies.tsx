@@ -67,7 +67,7 @@ const AllCompanies: React.FC = () => {
                             </div>
 
                             <Link
-                                to="/partner"
+                                to="/kontakt"
                                 className="btn-contact"
                             >
                                 Offerte anfragen

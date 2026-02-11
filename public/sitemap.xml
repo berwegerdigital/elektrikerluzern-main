@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://elektrikerluzern.ch/#/kontakt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://elektrikerluzern.ch/#/impressum</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

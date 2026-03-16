@@ -47,7 +47,7 @@ function generateSitemap() {
   // Static Routes
   STATIC_ROUTES.forEach(route => {
     xml += '  <url>\n';
-    const loc = route === '/' ? `${BASE_URL}/#/` : `${BASE_URL}/#${route}`;
+    const loc = route === '/' ? `${BASE_URL}/` : `${BASE_URL}${route}`;
     xml += `    <loc>${loc}</loc>\n`;
     xml += '    <changefreq>weekly</changefreq>\n';
     xml += `    <priority>${route === '/' ? '1.0' : '0.8'}</priority>\n`;
@@ -57,7 +57,7 @@ function generateSitemap() {
   // Services
   SERVICES.forEach(service => {
     xml += '  <url>\n';
-    xml += `    <loc>${BASE_URL}/#/service/${service.slug}</loc>\n`;
+    xml += `    <loc>${BASE_URL}/service/${service.slug}</loc>\n`;
     xml += '    <changefreq>weekly</changefreq>\n';
     xml += '    <priority>0.8</priority>\n';
     xml += '  </url>\n';
@@ -66,7 +66,7 @@ function generateSitemap() {
   // Regions
   REGIONS.forEach(region => {
     xml += '  <url>\n';
-    xml += `    <loc>${BASE_URL}/#/region/${region.slug}</loc>\n`;
+    xml += `    <loc>${BASE_URL}/region/${region.slug}</loc>\n`;
     xml += '    <changefreq>weekly</changefreq>\n';
     xml += '    <priority>0.8</priority>\n';
     xml += '  </url>\n';

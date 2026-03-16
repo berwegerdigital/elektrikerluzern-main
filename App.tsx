@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 // Lazy load pages for better initial performance
@@ -30,7 +30,7 @@ const PageLoader = () => (
 const App: React.FC = () => {
   return (
     <HelmetProvider>
-      <HashRouter>
+      <BrowserRouter>
         <ScrollToTop />
         <Layout>
           <React.Suspense fallback={<PageLoader />}>
@@ -49,7 +49,7 @@ const App: React.FC = () => {
             </Routes>
           </React.Suspense>
         </Layout>
-      </HashRouter>
+      </BrowserRouter>
     </HelmetProvider>
   );
 };

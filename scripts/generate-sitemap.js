@@ -78,10 +78,14 @@ function generateSitemap() {
 
 const sitemapContent = generateSitemap();
 const publicDir = path.resolve(__dirname, '../public');
+const distDir = path.resolve(__dirname, '../dist');
 
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapContent);
+if (fs.existsSync(distDir)) {
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapContent);
+}
 
-console.log(`Sitemap generated successfully in ${publicDir}/sitemap.xml with:
+console.log(`Sitemap generated successfully in ${publicDir}/sitemap.xml (and dist if exists) with:
 - ${STATIC_ROUTES.length} static routes
 - ${SERVICES.length} service routes
 - ${REGIONS.length} region routes

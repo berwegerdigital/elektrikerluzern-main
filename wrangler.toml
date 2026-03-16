@@ -1,6 +1,5 @@
 name = "elektrikerluzern-main"
-main = "index.tsx" # Standard Worker entry if needed, but assets take precedence
-compatibility_date = "2026-02-02"
+compatibility_date = "2026-03-16"
 
 [assets]
 directory = "./dist"
